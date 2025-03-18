@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get("/logout", {:controller => "sessions", :action => "destroy"})
   
   # Landing page (aka root route)
-  get("/", {:controller => "sessions", :action => "new"})  
+  # get("/", {:controller => "sessions", :action => "new"})  
   
 end

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       if BCrypt::Password.new(@user["password"]) == params["password"]
         session["user_id"] = @user["id"]
         flash["notice"] = "Welcome, #{@user["username"]}."
-        redirect_to "/"
+        redirect_to "/places"
       else
         # 4b. if the user doesn't know their password -> login fails
         flash["notice"] = "Login failed. Please try again"
