@@ -1,7 +1,11 @@
 <h1><%= @place["name"] %></h1>
 
 <% if session["user_id"].present? %>
-  <h2>My Entries</h2>
+  <h2>My Entries (<%= @entries.count %>) </h2>  
+  
+  <a href="/entries/new?place_id=<%= @place["id"] %>"><button>Add a New Entry</button></a>
+  <a href="/places"><button>Back to All Places</button></a>
+  <br>  
     ----------------------------------
   <% for entry in @entries %>
     <h3><%= entry["title"] %></h3>
@@ -10,14 +14,6 @@
     ----------------------------------
   <% end %>
 
-  <p>
-    <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
-  </p>
 <% else %>
-  Please log in to view entries
+  Please log in to view your entries
 <% end %>
-
-
-<p>
-  <a href="/places">Back to All Places</a>
-</p>
