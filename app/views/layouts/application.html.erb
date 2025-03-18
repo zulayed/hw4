@@ -14,11 +14,23 @@
     <div>
       <a href="/">Home</a>
        |
-      <a href="/logout">Logout</a>
-       | 
-      <a href="/login">Login</a>
-       | 
-      <a href="/users/new">Signup</a>
+
+      <!--check if anyone is logged in: -->
+      <% @user = User.find_by({ "id" => session["user_id"] }) %>
+
+      <!--if no one is logged in, show sign up and login options:-->
+      <% if @user == nil %>  
+        <a href="/login">Login</a>
+        | 
+        <a href="/users/new">Signup</a>
+      
+      <!--if user IS logged in, show users username and logout option-->
+      <% else %>
+        Logged in username: <%= @user["username"] %>
+        |
+        <a href="/logout">Logout</a>
+      <% end %> 
+    
     </div>
 
     <p>
