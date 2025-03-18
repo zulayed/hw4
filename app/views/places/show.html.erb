@@ -17,7 +17,8 @@
         <% if entry.uploaded_image.attached? %>
           <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
         <% else %>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class = "img-fluid">
+          <%#display a standard placeholder image (use case: user didn't upload a picture with regular journal entry (possible)%>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class = "img-fluid">   
         <% end %>
         
         <p><%= entry["description"] %></p>
