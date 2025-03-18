@@ -20,3 +20,28 @@ button:hover {
   background-color: #004494;
   transform: scale(1.05);
 }
+
+li {
+  background: white;
+  padding: 12px 15px;
+  margin: 8px 0; /* Keeps it left-aligned (no auto centering) */
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #333;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  max-width: 300px; /* 👈 Restricts the width */
+}
+
+
+
+
+li:hover {
+  transform: scale(1.05); /* Slightly enlarges on hover */
+  background-color: #f1f1f1; /* Light gray on hover */
+}
+
