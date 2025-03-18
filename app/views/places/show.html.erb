@@ -3,8 +3,8 @@
 <% if session["user_id"].present? %>
   <h2>My Entries (<%= @entries.count %>) </h2>  
   
-  <a href="/entries/new?place_id=<%= @place["id"] %>"><button>Add a New Entry</button></a>
-  <a href="/places"><button>Back to All Places</button></a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>"><button class="btn btn-success">Add a New Entry</button></a>
+  <a href="/places"><button class="btn btn-danger">Back to All Places</button></a>
   <br>  
     ----------------------------------
   <% for entry in @entries %>

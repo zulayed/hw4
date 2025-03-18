@@ -21,6 +21,7 @@ button:hover {
   transform: scale(1.05);
 }
 
+
 li {
   background: white;
   padding: 12px 15px;
@@ -37,11 +38,7 @@ li {
   max-width: 300px; /* 👈 Restricts the width */
 }
 
-
-
-
 li:hover {
   transform: scale(1.05); /* Slightly enlarges on hover */
   background-color: #f1f1f1; /* Light gray on hover */
 }
-
