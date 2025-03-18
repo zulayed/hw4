@@ -13,7 +13,13 @@
       <div class = "col-12 col-sm-8 col-md-6 col-lg-4">
         <h3><%= entry["title"] %></h3>
         <h4><%= entry["occurred_on"] %></h4>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class = "img-fluid">
+        
+        <% if entry.uploaded_image.attached? %>
+          <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+        <% else %>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class = "img-fluid">
+        <% end %>
+        
         <p><%= entry["description"] %></p>
       </div>
     <% end %>
