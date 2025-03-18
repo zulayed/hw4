@@ -33,23 +33,25 @@
           <!--if no one is logged in, show sign up and login options:-->
           <% if @user == nil %>  
             <a href="/login"><button class="btn btn-outline-success">Login</button></a>
-            &nbsp;&nbsp | &nbsp;&nbsp     
-            <a href="/users/new"><button class="btn btn-outline-primary">Signup</button></a>
-          
+            <div class="mx-2">     
+              <a href="/users/new"><button class="btn btn-outline-primary">Signup</button></a>
+            </div>
           <!--if user IS logged in, show users username and logout option-->
           <% else %>
             Logged in as user: <%= @user["username"] %>
-            &nbsp;&nbsp | &nbsp;&nbsp
-            <a href="/logout"><button class="btn btn-outline-danger">Logout</button></a>
+            <div class = "mx-3">
+              <a href="/logout"><button class="btn btn-outline-danger">Logout</button></a>
+            </div>
           <% end %> 
     </div>
   </div>
 </nav>
 
     <div class = "container">
-    <p>
-      <%= flash["notice"] %>
-    </p>
+      
+      <div class="p-4">
+        <%= flash["notice"] %>
+      </div>
 
     <%= yield %>
   </div>
