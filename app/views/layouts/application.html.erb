@@ -28,15 +28,15 @@
 
           <!--if no one is logged in, show sign up and login options:-->
           <% if @user == nil %>  
-            <a href="/login">Login</a>
+            <a href="/login"><button class="btn btn-outline-success">Login</button></a>
             &nbsp;&nbsp | &nbsp;&nbsp     
-            <a href="/users/new">Signup</a>
+            <a href="/users/new"><button class="btn btn-outline-primary">Signup</button></a>
           
           <!--if user IS logged in, show users username and logout option-->
           <% else %>
             Logged in as user: <%= @user["username"] %>
             &nbsp;&nbsp | &nbsp;&nbsp
-            <a href="/logout">Logout</a>
+            <a href="/logout"><button class="btn btn-outline-danger">Logout</button></a>
           <% end %> 
     </div>
   </div>

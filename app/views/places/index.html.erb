@@ -1,8 +1,7 @@
-<h1>Places (<%=@places.count%>) </h1>
-<p>
+<h1>Places (<%=@places.count%>) 
   <a href="/places/new"><button class="btn btn-success">Add a New place</button></a>
-</p>
-
+</h1>
+<hr>
 <ul>
   <% for place in @places %>
     <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>

@@ -1,19 +1,23 @@
 <h1><%= @place["name"] %></h1>
 
 <% if session["user_id"].present? %>
-  <h2>My Entries (<%= @entries.count %>) </h2>  
+  <h2>My Entries (<%= @entries.count %>)  
   
   <a href="/entries/new?place_id=<%= @place["id"] %>"><button class="btn btn-success">Add a New Entry</button></a>
   <a href="/places"><button class="btn btn-danger">Back to All Places</button></a>
-  <br>  
-    ----------------------------------
-  <% for entry in @entries %>
-    <h3><%= entry["title"] %></h3>
-    <h4><%= entry["occurred_on"] %></h4>
-    <p><%= entry["description"] %></p>
-    ----------------------------------
-  <% end %>
+  </h2> 
+  <hr> 
 
+  <div class = "row">   
+    <% for entry in @entries %>
+      <div class = "col-12">
+      <h3><%= entry["title"] %></h3>
+      <h4><%= entry["occurred_on"] %></h4>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class = "img-fluid">
+      <p><%= entry["description"] %></p>
+      </div>
+    <% end %>
+  </div>
 <% else %>
   You must <a href="/login">login</a> to view your entries!
 <% end %>
